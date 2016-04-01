@@ -197,10 +197,6 @@ public class PutAzureBlobObjectTest {
             testRunner.assertValid(connectionService);
             testRunner.setProperty(AZURE_STORAGE_CONTROLLER_SERVICE, connectionService.getIdentifier());
 
-            Date now = new Date();
-
-            Thread.sleep(1100);
-
             testRunner.setProperty(AZURE_STORAGE_BEHAVIOUR_IF_BLOB_EXISTS, "append");
 
             final String DYNAMIC_ATTRIB_KEY_1 = "runTimestamp";

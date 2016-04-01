@@ -96,12 +96,6 @@ public class PutAzureBlobObject extends AbstractAzureCredentialsProviderProcesso
                 .build();
     }
 
-
-    /**
-     * AWS credentials provider service
-     *
-     * @see <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/AWSCredentialsProvider.html">AWSCredentialsProvider</a>
-     */
     public static final PropertyDescriptor AZURE_STORAGE_BEHAVIOUR_IF_BLOB_EXISTS = new PropertyDescriptor.Builder()
             .name("fail if blob exists")
             .description("What to do when output blob already exists.")

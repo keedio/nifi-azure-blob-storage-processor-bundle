@@ -84,12 +84,6 @@ public class FetchAzureBlobObject extends AbstractAzureCredentialsProviderProces
 
     private Set<Relationship> relationships;
 
-
-    /**
-     * AWS credentials provider service
-     *
-     * @see <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/AWSCredentialsProvider.html">AWSCredentialsProvider</a>
-     */
     public static final PropertyDescriptor AZURE_STORAGE_BLOB_OBJECT = new PropertyDescriptor.Builder()
             .name("Full path name of the blob object to retrieve")
             .description("Full path name of the blob object to retrieve")

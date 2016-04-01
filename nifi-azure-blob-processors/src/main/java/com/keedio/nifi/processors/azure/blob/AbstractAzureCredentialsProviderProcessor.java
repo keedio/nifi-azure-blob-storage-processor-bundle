@@ -106,18 +106,22 @@ public abstract class AbstractAzureCredentialsProviderProcessor extends Abstract
         return getProperty(p, propName, String.class);
     }
 
+    @SuppressWarnings("unchecked")
     private <T> T getProperty(Object p, String propName, Class<T> returnClazz) {
         T res = null;
         if (p != null) {
             try {
                 Object tmp = (T)PropertyUtils.getProperty(p, propName);
 
-                if (returnClazz.equals(String.class) && !tmp.getClass().equals(String.class)){
-                    res = (T) tmp.toString();
+                if (returnClazz.equals(String.class) &&
+                        !tmp.getClass().equals(String.class)){
+
+                    res = (T)tmp.toString();
                 } else {
-                    res  = (T)tmp;
+                    res = (T)tmp;
                 }
             } catch (Exception e) {
+                getLogger().debug(String.format("Could not get property %s", propName));
             }
         }
         return res;
